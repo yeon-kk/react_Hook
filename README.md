@@ -28,3 +28,7 @@ dispatch와 reducer가 있다. dispatch는 action "객체"를 보냄. reduce는 
 dispatch는 action을 일으키는 함수=setState와 비슷한 역할.
 [state,dispatch] = useReducer(reducer,초깃값) 이해가 된다.
 그리고 dispatch(action 객체), reducer = (state,action) =>{ action을 이용해서 state를 변경하는 코드. }
+
+Context
+export const 컴포넌트명작성 = React.createContext(); //컴포넌트 생성
+const 변수 =useContext(작성한컴포넌트)
