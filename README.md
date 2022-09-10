@@ -8,3 +8,5 @@
 따라서, 재랜더링 되는 것을 막기 위해 useCallback를 만들고, 해당 함수에서 필요한 state만 의존성 배열에 지정한다.
 
 ![image](https://user-images.githubusercontent.com/86847564/189472439-6e5dfbce-420a-4ff5-bd8d-903c9974bd0f.png)
+
+이미지에서 보이는 것처럼, toggle버튼으로 toggle true<->false로 변경되지만 number가 변경되지 않기 때문에 "checkNumber :: 변경"이 콘솔에 찍히지 않는다는 것을 확인할 수 있다.
