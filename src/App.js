@@ -1,34 +1,40 @@
 import "./App.css";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useMemo } from "react";
 
 function App() {
-  const [color, setColor] = useState("yellow");
-  const [number, setNumber] = useState(200);
-  const showColor = useCallback(() => {
-    setColor(color == "yellow" ? "black" : "yellow");
-  }, [color]);
-  useEffect(() => {
-    console.log(color);
-  }, [showColor]);
+  const [count, setCount] = useState(1);
+  const [answer, setAnswer] = useState(true);
+  const changeCount = useMemo(() => {
+    console.log("개수");
+    return count;
+  }, [count]);
+  const cnt = changeCount;
+  const changeAnswer = useMemo(() => {
+    console.log("대답");
+    return answer;
+  }, [answer]);
+  const ans = changeAnswer;
   return (
-    <>
+    <div>
+      <h3>내가 먹는 아이스티 갯수:{cnt}</h3>
       <input
         type="number"
-        value={number}
         onChange={(e) => {
-          setNumber(e.target.value);
+          setCount(e.target.value);
         }}
+        value={count}
       ></input>
-      <div
-        style={{
-          display: "flex",
-          width: `${number}px`,
-          height: `${number}px`,
-          backgroundColor: `${color}`,
+      <h4>오늘은 퇴근할 수 있나요?</h4>
+      <button
+        style={{ width: "150px" }}
+        onClick={() => {
+          setAnswer(!answer);
         }}
-      ></div>
-      <button onClick={showColor}>색깔 바꾸기</button>
-    </>
+      >
+        {ans ? "네" : "아쉽게도 농농.."}
+      </button>
+      <div>{ans ? "예쓰!" : "제발!"}</div>
+    </div>
   );
 }
 export default App;
