@@ -15,6 +15,8 @@
 크기를 200으로 시작하고, 색상을 변경해주는 코드 작성. useEffect를 하면 숫자를 변경했을 때 색상 부분의 함수도 호출되는데, 그때 useCallback를 사용하면 숫자가 변경되더라도 콘솔에서 색상이 출력되지 않는다.
 
 ![image](https://user-images.githubusercontent.com/86847564/189479511-bc726a09-c270-4b7e-994b-c6d6093e3c97.png)
-useMemo의 경우 value를 return.
+useMemo의 경우 value를 return. 그런데, object일 때, 얕은복사로 주소값이 변경되기 때문에 그때도 변경된다. 그걸 막기 위해 useMemo
 
-Hook, 최적화 할 때 필요함~!
+React.Memo()는 컴포넌트에 적용, props가 변경되지 않는다면 재랜더링 하지 않는다.
+
+Hook, 최적화 
