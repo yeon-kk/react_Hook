@@ -21,11 +21,6 @@ React.Memo()는 컴포넌트에 적용, props가 변경되지 않는다면 재�
 
 Hook, 최적화 
 
-useReducer를 기억하려면, dispatch 함수와 reduder 함수가 있다는 것을 기억해야 함.
-
-dispatch(액션을 보냄?)는 reducer(변경)를 호출.. 
-
-Reduce : 줄이다라는 의미보다 변경이라는 의미에 가깝다고 한다. "to change something into a simpler or more general form" [https://devlog.jwgo.kr/2018/08/23/redux-which-is-weird-term/]
 
 useReducer
 아 복잡한데? 큰일이네 단순하게 생각하자
