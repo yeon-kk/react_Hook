@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [number, setNumber] = useState(1);
+  const showNumber = (e) => {
+    setNumber(e.target.value);
+  };
+  const checkNumber = () => {
+    console.log(`number :: ${number}`);
+  };
+  useEffect(() => {
+    console.log("checkNumber :: 변경");
+  }, [checkNumber]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>useCallback 연습</h3>
+      <input
+        type="number"
+        onChange={showNumber}
+        value={number}
+        name="num"
+      ></input>
+      <div></div>
+      <button onClick={checkNumber}>콘솔로 숫자 확인하기</button>
     </div>
   );
 }
