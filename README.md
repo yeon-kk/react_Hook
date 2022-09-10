@@ -20,3 +20,16 @@ useMemo의 경우 value를 return. 그런데, object일 때, 얕은복사로 주
 React.Memo()는 컴포넌트에 적용, props가 변경되지 않는다면 재랜더링 하지 않는다.
 
 Hook, 최적화 
+
+useReducer를 기억하려면, dispatch 함수와 reduder 함수가 있다는 것을 기억해야 함.
+
+dispatch(액션을 보냄?)는 reducer(변경)를 호출.. 
+
+Reduce : 줄이다라는 의미보다 변경이라는 의미에 가깝다고 한다. "to change something into a simpler or more general form" [https://devlog.jwgo.kr/2018/08/23/redux-which-is-weird-term/]
+
+useReducer
+아 복잡한데? 큰일이네 단순하게 생각하자
+dispatch와 reducer가 있다. dispatch는 action "객체"를 보냄. reduce는 state를 action에 따라 변화함. 둘다 action 객체를 이용함. reduce는 결국 state를 변화시킨다!
+dispatch는 action을 일으키는 함수=setState와 비슷한 역할.
+[state,dispatch] = useReducer(reducer,초깃값) 이해가 된다.
+그리고 dispatch(action 객체), reducer = (state,action) =>{ action을 이용해서 state를 변경하는 코드. }
