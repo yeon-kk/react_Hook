@@ -10,3 +10,6 @@
 ![image](https://user-images.githubusercontent.com/86847564/189472439-6e5dfbce-420a-4ff5-bd8d-903c9974bd0f.png)
 
 이미지에서 보이는 것처럼, toggle버튼으로 toggle true<->false로 변경되지만 number가 변경되지 않기 때문에 "checkNumber :: 변경"이 콘솔에 찍히지 않는다는 것을 확인할 수 있다.
+
+![image](https://user-images.githubusercontent.com/86847564/189475886-bc878a64-841c-4759-8d56-29b90e00ca0c.png)
+크기를 200으로 시작하고, 색상을 변경해주는 코드 작성. useEffect를 하면 숫자를 변경했을 때 색상 부분의 함수도 호출되는데, 그때 useCallback를 사용하면 숫자가 변경되더라도 콘솔에서 색상이 출력되지 않는다.
