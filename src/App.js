@@ -2,39 +2,33 @@ import "./App.css";
 import { useState, useEffect, useCallback } from "react";
 
 function App() {
-  const [number, setNumber] = useState(1);
-  const [toggle, setToggle] = useState(true);
-  const showNumber = (e) => {
-    setNumber(e.target.value);
-  };
-  const checkNumber = useCallback(() => {
-    console.log(`number :: ${number}`);
-  }, [number]);
-
+  const [color, setColor] = useState("yellow");
+  const [number, setNumber] = useState(200);
+  const showColor = useCallback(() => {
+    setColor(color == "yellow" ? "black" : "yellow");
+  }, [color]);
   useEffect(() => {
-    console.log("checkNumber :: 변경");
-  }, [checkNumber]);
-
+    console.log(color);
+  }, [showColor]);
   return (
-    <div className="App">
-      <h3>useCallback 연습</h3>
+    <>
       <input
         type="number"
-        onChange={showNumber}
         value={number}
-        name="num"
-      ></input>
-      <div></div>
-      <button onClick={checkNumber}>콘솔로 숫자 확인하기</button>
-      <button
-        onClick={() => {
-          setToggle(!toggle);
+        onChange={(e) => {
+          setNumber(e.target.value);
         }}
-      >
-        {toggle.toString()}
-      </button>
-    </div>
+      ></input>
+      <div
+        style={{
+          display: "flex",
+          width: `${number}px`,
+          height: `${number}px`,
+          backgroundColor: `${color}`,
+        }}
+      ></div>
+      <button onClick={showColor}>색깔 바꾸기</button>
+    </>
   );
 }
-
 export default App;
